@@ -7,8 +7,17 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+  <button ion-button (click)="showDetails()">HTTPS-DB-Data</button>
+  <button ion-button (click)="showRwpsDetails()">RWPS-DATA</button>
+  <ion-item *ngIf="toggleButton">
+    <!-- <ion-list *ngFor="let det of details">{{det}}</ion-list> -->
+    <ion-item *ngFor="let det of details">
+      <ion-grid>
+        <ion-row>
+          <ion-row>{{det.id}}</ion-row>
+          <ion-row>{{det.title}}</ion-row>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-item>
 </ion-content>
